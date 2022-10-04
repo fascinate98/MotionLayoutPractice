@@ -4,18 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9CACCB"
+    android:id="@+id/motion_layout"
     app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:src="@drawable/flogo"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/sample_lottie"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/cloud_lottie"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/sample_tab"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sample_lottie" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/sample_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/sample_tab" />
+
+
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
